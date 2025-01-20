@@ -6,7 +6,7 @@
         &kp DOWN                    LT                  &kp DOWN                  RT                    &kp END   \
         &kp LEFT                    LM                  &kp LEFT                  RM                    &kp PG_UP \
         &kp RIGHT                   LB                  &kp RIGHT                 RB                    &kp PG_DN \
-        &kp C_MUTE      &none &none LH &kp LSHIFT       &kp ENTER           &none RH &smart_mouse &none           \
+        &kp C_MUTE      &none &none LH &kp LSHIFT       &kp ENTER           &none RH &none &none           \
         ,&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN                                              )
 
 #include "key-labels-eyelash-sofle-64.h"
