@@ -200,8 +200,8 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
         name,                                                                                                     \
         &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5    U_MS_U    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0    &kp BSPC  \
         &kp DOWN                    LT                  U_MS_D                    RT                    &kp BSLH  \
-        &kp LEFT                    LM                  U_MS_LEFT                 RM                    &kp APOS  \
-        &kp RIGHT                   LB                  U_MS_RIGHT                RB                    &kp PG_DN \
+        &kp LEFT                    LM                  U_MS_L                    RM                    &kp APOS  \
+        &kp RIGHT                   LB                  U_MS_R                    RB                    &kp PG_DN \
         &kp C_MUTE      &none &none LH &kp LSHIFT       &kp ENTER           &none RH &none &none           \
         ,&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN                                              )
 
@@ -269,7 +269,7 @@ ZMK_BASE_LAYER(Sys,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
   &rgb_ug RGB_EFF &rgb_ug RGB_EFR &rgb_ug RGB_BRI &rgb_ug RGB_BRD &bootloader ,   &bootloader   ___     ___           ___           ___         ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  &rgb_ug RGB_OFF &rgb_ug RGB_ON &rgb_ug RGB_SPI            &sys_reset  ,   &sys_reset    ___           ___           ___           ___         ,
+  &rgb_ug RGB_OFF &rgb_ug RGB_ON &rgb_ug RGB_SPI   ___      &sys_reset  ,   &sys_reset    ___           ___           ___           ___         ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                               ___           ___         ,   ___           ___
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
