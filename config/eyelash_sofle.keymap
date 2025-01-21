@@ -1,3 +1,4 @@
+// defining everything in base layer since other keys can only be hardcoded from here
 #define CONFIG_WIRELESS
 #include "key-labels-eyelash-sofle-64.h"
 #include "base.keymap"
