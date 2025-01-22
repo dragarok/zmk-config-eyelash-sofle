@@ -180,6 +180,13 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
+#define HYPER_HMR &hmr LS(LC(LA(LGUI))) LA(GRAVE) // main hyper key
+#define MODR_HMR &hmr LC(LGUI) LA(COMMA) // rightbottom key
+#define TAB_HML &hml LS(LC(LGUI)) LA(PERIOD) // tab key
+#define ESCCAPS_HML &hml LS(LC(LGUI)) ESC // caps lock key
+#define MODL_HML &hml LC(LGUI) LA(COMMA) // leftbottom key
+
+
 /* Keymap */
 
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
@@ -189,20 +196,20 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
     ZMK_LAYER(                                                                                                    \
         name,                                                                                                     \
         &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5    &kp UP    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0    &kp BSPC  \
-        &kp DOWN                    LT                  &kp DOWN                  RT                    &kp BSLH  \
-        &kp LEFT                    LM                  &kp LEFT                  RM                    &kp APOS  \
-        &kp RIGHT                   LB                  &kp RIGHT                 RB                    &kp PG_DN \
-        &kp C_MUTE      &none &none LH &kp LSHIFT       &kp ENTER           &none RH &none &none           \
+        TAB_HML                     LT                  &kp DOWN                  RT                    &kp BSLH  \
+        ESCCAPS_HML                 LM                  &kp LEFT                  RM                    &kp APOS  \
+        MODL_HML                    LB                  &kp RIGHT                 RB                    MODR_HMR  \
+        &kp C_MUTE &none &none &none LH                 &kp ENTER           &none RH &none &none           \
         ,&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN                                              )
 
 #define ZMK_BASE_LAYER_MMV(name, LT, RT, LM, RM, LB, RB, LH, RH)                                                  \
     ZMK_LAYER(                                                                                                    \
         name,                                                                                                     \
         &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5    U_MS_U    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0    &kp BSPC  \
-        &kp DOWN                    LT                  U_MS_D                    RT                    &kp BSLH  \
-        &kp LEFT                    LM                  U_MS_L                    RM                    &kp APOS  \
-        &kp RIGHT                   LB                  U_MS_R                    RB                    &kp PG_DN \
-        &kp C_MUTE      &none &none LH &kp LSHIFT       &kp ENTER           &none RH &none &none           \
+        TAB_HML                     LT                  U_MS_D                    RT                    &kp BSLH  \
+        ESCCAPS_HML                 LM                  U_MS_L                    RM                    &kp APOS  \
+        MODL_HML                    LB                  U_MS_R                    RB                    MODR_HMR  \
+        &kp C_MUTE &none &none &none LH                 &mkp LCLK           &none RH &none &none           \
         ,&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN                                              )
 
 #ifndef ZMK_BASE_LAYER
@@ -223,7 +230,7 @@ ZMK_BASE_LAYER(Base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp Z         &kp X         &kp C         &kp V         &kp B       ,   &kp N         &kp M         &comma_morph  &dot_morph    &qexcl      ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                              &lt_spc NAV 0 &lt FN RET  ,   SMART_NUM     &smart_shft
+                                              &lt FN RET   &lt_spc NAV 0,   SMART_NUM     &smart_shft
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
 
