@@ -68,10 +68,9 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
   MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
-/* Combos, leader key sequences, mouse emulation */
+/* Combos, mouse emulation */
 
 #include "combos.dtsi" // Must be sourced after HRM-combo hack.
-#include "leader.dtsi"
 #include "mouse.dtsi"
 
 /* Nav cluster */
@@ -168,9 +167,6 @@ ZMK_MOD_MORPH(bs_del, bindings = <&kp BSPC>, <&kp DEL>;
 ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
               tapping-term-ms = <200>;)
 
-// Sticky shift + leader.
-ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
-
 // Misc aliases. [TODO: clean up]
 #define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
 #define DSK_PREV  &hmr LCTRL LG(LC(LEFT)) // Previous desktop.
@@ -180,10 +176,10 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
-#define HYPER_HMR &hmr LS(LC(LA(LGUI))) LA(GRAVE) // main hyper key
+#define HYPER_HMR &hmr LC(LA(LS(LGUI))) LA(GRAVE) // main hyper key
 #define MODR_HMR &hmr LC(LGUI) LA(COMMA) // rightbottom key
-#define TAB_HML &hml LS(LC(LGUI)) LA(PERIOD) // tab key
-#define ESCCAPS_HML &hml LS(LC(LGUI)) ESC // caps lock key
+#define TAB_HML &hml LC(LS(LGUI)) LA(PERIOD) // tab key
+#define ESCCAPS_HML &hml LC(LS(LGUI)) ESC // caps lock key
 #define MODL_HML &hml LC(LGUI) LA(COMMA) // leftbottom key
 
 
