@@ -20,7 +20,6 @@
 #define NUM 3
 #define SYS 4
 #define MOUSE 5
-// #define SYMBOL 6
 
 #define XXX &none
 #define ___ &trans
@@ -176,11 +175,11 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
-#define HYPER_HMR &hmr LS(LC(LA(LGUI))) LA(GRAVE) // main hyper key
-#define MODR_HMR &hmr LC(LGUI) LA(COMMA) // rightbottom key
-#define TAB_HML &hml LC(LS(LGUI)) LA(PERIOD) // tab key
-#define ESCCAPS_HML &hml LC(LS(LGUI)) ESC // caps lock key
-#define MODL_HML &hml LC(LGUI) LA(COMMA) // leftbottom key
+#define HYPER_HMR   &hmr LS(LC(LA(LGUI))) LA(GRAVE)   // main hyper key
+#define MODR_HMR    &hmr LC(LGUI) LA(COMMA)           // rightbottom key
+#define TAB_HML     &hml LC(LS(LGUI)) LA(PERIOD)      // tab key
+#define CAPS_HML    &hml LC(LS(LGUI)) ESC             // caps lock key
+#define MODL_HML    &hml LC(LGUI) LA(ENTER)           // leftbottom key
 
 
 /* Keymap */
@@ -193,9 +192,9 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
         name,                                                                                                     \
         &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5    &kp UP    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0    &kp BSPC  \
         TAB_HML                     LT                  &kp DOWN                  RT                    &kp BSLH  \
-        ESCCAPS_HML                 LM                  &kp LEFT                  RM                    &kp APOS  \
+        CAPS_HML                    LM                  &kp LEFT                  RM                    &kp APOS  \
         MODL_HML                    LB                  &kp RIGHT                 RB                    MODR_HMR  \
-        &kp C_MUTE &none &none &none LH                 &kp ENTER       HYPER_HMR RH &none &none           \
+        &kp C_MUTE &kp LCTRL &kp LGUI &kp LALT  LH      &kp ENTER   &lt_spc NAV 0  HYPER_HMR  RH  &lt FN RET      \
         ,&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN                                              )
 
 #define ZMK_BASE_LAYER_MMV(name, LT, RT, LM, RM, LB, RB, LH, RH)                                                  \
@@ -203,9 +202,9 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
         name,                                                                                                     \
         &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5    U_MS_U    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0    &kp BSPC  \
         TAB_HML                     LT                  U_MS_D                    RT                    &kp BSLH  \
-        ESCCAPS_HML                 LM                  U_MS_L                    RM                    &kp APOS  \
+        CAPS_HML                    LM                  U_MS_L                    RM                    &kp APOS  \
         MODL_HML                    LB                  U_MS_R                    RB                    MODR_HMR  \
-        &kp C_MUTE &none &none &none LH                 &mkp LCLK       HYPER_HMR RH &none &none           \
+        &kp C_MUTE &kp LCTRL &kp LGUI &kp LALT  LH      &mkp LCLK  &lt_spc NAV 0  HYPER_HMR  RH  &lt FN RET       \
         ,&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN                                              )
 
 #ifndef ZMK_BASE_LAYER
@@ -256,11 +255,11 @@ ZMK_BASE_LAYER_MMV(Fn,
 
 ZMK_BASE_LAYER(Num,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    ___           &kp N7        &kp N8        &kp N9        ___         ,   ___           ___           ___           ___           ___         ,
+    ___           &kp N7        &kp N8        &kp N9        ___         ,   &kp EXCL      &kp LBRC       &kp RBRC     &kp LPAR      &kp RPAR    ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &hml LGUI N0  &hml LALT N4  &hml LSHFT N5 &hml LCTRL N6 ___         ,   ___           ___           ___           ___           ___         ,
+    &hml LGUI N0  &hml LALT N4  &hml LSHFT N5 &hml LCTRL N6 ___         ,   &kp ASTRK     &kp UNDER     &kp MINUS     &kp LBKT      &kp RBKT    ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    ___           &kp N1        &kp N2        &kp N3        ___         ,   ___           ___           ___           ___           ___         ,
+    ___           &kp N1        &kp N2        &kp N3        ___         ,   &kp HASH      &kp KP_EQUAL  &kp KP_PLUS   &kp CARET     &kp AMPS    ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                               ___           ___         ,   ___           ___
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
@@ -289,17 +288,5 @@ ZMK_BASE_LAYER(Mouse,
                                               ___           ___         ,   U_WH_U        U_WH_D
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
 )
-
-// ZMK_BASE_LAYER_MMV(Sym,
-// //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-//     &kp EXCL      &kp LBRC       &kp RBRC     &kp LPAR      &kp RPAR    ,   &kp EXCL      &kp LBRC       &kp RBRC     &kp LPAR      &kp RPAR    ,
-// //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//     &kp ASTRK     &kp UNDER     &kp MINUS     &kp LBKT      &kp RBKT    ,   &kp ASTRK     &kp UNDER     &kp MINUS     &kp LBKT      &kp RBKT    ,
-// //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//     &kp HASH      &kp KP_EQUAL  &kp KP_PLUS   &kp CARET     &kp AMPS    ,   &kp HASH      &kp KP_EQUAL  &kp KP_PLUS   &kp CARET     &kp AMPS    ,
-// //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-//                                               ___           ___         ,   ___           ___
-// //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
-// )
 
 /* vim: set ft=c tw=146: */
