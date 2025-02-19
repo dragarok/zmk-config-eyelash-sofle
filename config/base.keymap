@@ -166,7 +166,7 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 
 #define HYPER_HMR   &hmr LS(LC(LA(LGUI))) LA(GRAVE)   // main hyper key
 #define MODR_HMR    &hmr LC(LGUI) LA(COMMA)           // rightbottom key
-#define TAB_HML     &hml LC(LS(LGUI)) LA(PERIOD)      // tab key
+#define TAB_HML     &hml LC(LS(LGUI)) TAB      // tab key
 #define CAPS_HML    &hml LC(LS(LGUI)) ESC             // caps lock key
 #define MODL_HML    &hml LC(LGUI) LA(ENTER)           // leftbottom key
 
@@ -212,7 +212,7 @@ ZMK_BASE_LAYER(Base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &hml LGUI A   &hml LSHFT S  &hml LALT D  &hml LCTRL F   &lt NUM G   ,   &kp H         &hmr LCTRL J  &hmr LALT K  &hmr RSHFT L   &hmr LGUI SEMI ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp Z         &kp X         &kp C         &kp V         &kp B       ,   &kp N         &kp M         &kp COMMA     &kp DOT       &kp BSLH    ,
+    &kp Z         &kp X         &kp C         &kp V         &kp B       ,   &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH    ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                               &lt FN RET   &lt_spc NAV 0,   SMART_NUM     &smart_shft
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
