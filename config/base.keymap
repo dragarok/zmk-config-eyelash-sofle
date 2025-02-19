@@ -166,7 +166,7 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 
 #define HYPER_HMR   &hmr LS(LC(LA(LGUI))) LA(GRAVE)   // main hyper key
 #define MODR_HMR    &hmr LC(LGUI) LA(COMMA)           // rightbottom key
-#define TAB_HML     &hml LC(LS(LGUI)) TAB      // tab key
+#define TAB_HML     &hml LA(LGUI) TAB      // tab key
 #define CAPS_HML    &hml LC(LS(LGUI)) ESC             // caps lock key
 #define MODL_HML    &hml LC(LGUI) LA(ENTER)           // leftbottom key
 
