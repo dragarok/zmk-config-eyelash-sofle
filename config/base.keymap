@@ -118,18 +118,11 @@ ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
               tapping-term-ms = <200>;)
 
-// Smart-mouse, requires tri-state module.
-ZMK_TRI_STATE(
-    smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
-    ignored-key-positions =
-        <LT1 LT3 LH0 LH1 LH2 LH3 LH4 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1 RH2 RH3 RH4>;
-    ignored-layers = <MOUSE NAV FN>;)
-
 /* Custom behaviors */
 
 // Cmd+Tab swapper, requires tri-state module.
 ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-              ignored-key-positions = <LT2>;)
+              ignored-key-positions = <LT2 RT0 RT1 RM0 RB0>;)
 
 // Define mod-morph with a *single* mod trigger for less repetition.
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
@@ -183,7 +176,7 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
         TAB_HML                     LT                  &kp DOWN                  RT                    &kp BSLH  \
         CAPS_HML                    LM                  &kp LEFT                  RM                    &kp APOS  \
         MODL_HML                    LB                  &kp RIGHT                 RB                   &lt FN RET \
-        &kp C_MUTE &kp LCTRL &kp LGUI &kp LALT  LH      &kp ENTER   &lt_spc NAV 0  HYPER_HMR  RH  MODR_HMR        \
+        &kp C_MUTE &kp LCTRL &kp LGUI &lt MOUSE RET  LH      &kp ENTER   &lt_spc NAV 0  HYPER_HMR  RH  MODR_HMR        \
         ,&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN                                              )
 
 #define ZMK_BASE_LAYER_MMV(name, LT, RT, LM, RM, LB, RB, LH, RH)                                                  \
@@ -193,7 +186,7 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
         TAB_HML                     LT                  U_MS_D                    RT                    &kp BSLH  \
         CAPS_HML                    LM                  U_MS_L                    RM                    &kp APOS  \
         MODL_HML                    LB                  U_MS_R                    RB                   &lt FN RET \
-        &kp C_MUTE &kp LCTRL &kp LGUI &kp LALT  LH      &mkp LCLK  &lt_spc NAV 0  HYPER_HMR  RH  MODR_HMR         \
+        &kp C_MUTE &kp LCTRL &kp LGUI &lt MOUSE RET  LH      &mkp LCLK  &lt_spc NAV 0  HYPER_HMR  RH  MODR_HMR         \
         ,&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN                                              )
 
 #ifndef ZMK_BASE_LAYER
@@ -220,11 +213,11 @@ ZMK_BASE_LAYER(Base,
 
 ZMK_BASE_LAYER_MMV(Nav,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    ___           ___           &kp LS(TAB)   &swapper      ___         ,   NAV_DOWN      NAV_RIGHT     &kp PG_UP      &kp PG_DN      ___        ,
+    ___           ___           &kp LS(TAB)   &swapper      &mkp LCLK   ,   NAV_DOWN      NAV_RIGHT     &kp PG_UP      &kp PG_DN      ___        ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &sk LGUI      &sk LSHFT      &sk LALT     &sk LCTRL     ___         ,   NAV_LEFT      NAV_BSPC      &kp TAB        NAV_DEL       &kp RET    ,
+    &sk LGUI      &sk LSHFT      &sk LALT     &sk LCTRL     &mkp RCLK   ,   NAV_LEFT      NAV_BSPC      &kp TAB        NAV_DEL       &kp RET    ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    ___           ___           ___           ___           ___         ,   NAV_UP        ___           &kp INS       ___           ___         ,
+    ___           ___            ___          ___           &mkp MCLK   ,   NAV_UP        ___           &kp INS       ___           ___         ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                               ___           ___         ,   ___           CANCEL
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
