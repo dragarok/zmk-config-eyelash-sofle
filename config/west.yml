@@ -1,56 +1,68 @@
-# forked from https://github.com/urob/zmk-config/blob/9f386d209657a1aefc625633bda13f5a091ea465/config/west.yml
-# and https://github.com/a741725193/zmk-sofle/blob/53a89e7553fc973ee2d429626aaa0d8b8e06af76/config/west.yml
+# Built on the manufacturer's manifest (a741725193/zmk-sofle) so the board
+# resolves against the ZMK fork it actually targets, with our personal modules
+# layered on top.
+#   - manufacturer: https://github.com/a741725193/zmk-sofle/blob/main/config/west.yml
+#   - urob helpers/behaviors: https://github.com/urob/zmk-config
+#   - nice_view display: https://github.com/M165437/nice-view-gem
 
 manifest:
-  defaults:
-    remote: urob
-    revision: v0.3
-
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: cormoran
+      url-base: https://github.com/cormoran
     - name: urob
       url-base: https://github.com/urob
     - name: m165437
       url-base: https://github.com/M165437
-  projects:
-    - name: zmk
-      remote: zmkfirmware
-      import: app/west.yml
-      revision: v0.3
 
+  projects:
+    # --- Board + ZMK fork the manufacturer builds against (do not change to
+    #     zmkfirmware/zmk: the board files reference cormoran-only behaviors) ---
     - name: eyelash_sofle
       url: https://github.com/a741725193/zmk-sofle
       revision: main
+    - name: zmk
+      remote: cormoran
+      revision: v0.3-branch+dya
+      import: app/west.yml
 
-    # Animated nice_view display (status screen + peripheral animation).
-    # Replaces the unmaintained mario-peripheral-animation. Pin to the release
-    # matching ZMK v0.3. See https://github.com/M165437/nice-view-gem
+    # --- Manufacturer's required custom modules ---
+    - name: zmk-behavior-runtime-sensor-rotate
+      remote: cormoran
+      revision: main
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: zmk-v0.3.0.0
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: zmk-v0.3.0.0
+
+    # --- Our personal additions ---
+    # Animated nice_view display (status screen + peripheral animation),
+    # pinned to the release matching ZMK v0.3.
     - name: nice-view-gem
       remote: m165437
       revision: v0.3.0
-
+    # urob home-row-mod helpers + behaviors used by base.keymap.
     - name: zmk-helpers
+      remote: urob
+      revision: v0.3
       path: modules/zmk/helpers
     - name: zmk-tri-state
+      remote: urob
+      revision: v0.3
       path: modules/zmk/tri-state
     - name: zmk-auto-layer
+      remote: urob
+      revision: v0.3
       path: modules/zmk/auto-layer
-
-    # Only source necessary Zephyr modules. Remove this entire section to restore
-    # the default (needed for less common hardware).
-    - name: zephyr
-      remote: zmkfirmware
-      revision: v3.5.0+zmk-fixes
-      clone-depth: 1
-      import:
-        name-allowlist:
-          - cmsis
-          - hal_nordic
-          - lvgl
-          - tinycrypt
 
   self:
     path: config
