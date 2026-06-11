@@ -1,0 +1,30 @@
+name: Draw keymap
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/*.keymap"
+      - "config/*.dtsi"
+      - "config/*.json"
+      - "config/key-labels-*.h"
+      - "keymap_drawer.config.yaml"
+      - ".github/workflows/draw.yml"
+
+jobs:
+  draw:
+    permissions:
+      contents: write
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    with:
+      # Parse only the top-level keymap (it #includes base.keymap); parsing
+      # base.keymap on its own would fail since it has no keymap wrapper.
+      keymap_patterns: "config/eyelash_sofle.keymap"
+      # Physical layout for the 64-key eyelash sofle (from the manufacturer).
+      json_path: "config"
+      # west.yml lives here; the workflow runs `west update` so module includes
+      # (zmk-helpers, num_word, etc.) resolve during parsing.
+      west_config_path: "config"
+      output_folder: "keymap-drawer"
+      destination: "both"
+      amend_commit: false

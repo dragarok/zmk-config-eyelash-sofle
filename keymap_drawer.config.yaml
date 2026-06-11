@@ -1,0 +1,38 @@
+parse_config:
+  # Needed so the urob ZMK_LAYER / hold-tap macros expand during parsing.
+  zmk_additional_includes:
+    - "modules/zmk/helpers/include"
+
+  # Friendly labels for this config's custom behaviors/macros so the rendered
+  # diagram is readable instead of showing raw bindings.
+  raw_binding_map:
+    "&smart_shft": { t: "⇧ Smart", h: Shift }
+    "&smart_num NUM 0": { t: "Smart Num" }
+    "&num_dance": { t: "Smart Num" }
+    "&swapper": "⌘-Tab"
+    "&dot_spc": ". ␣"
+    "&caps_word": Caps Word
+    "&bs_del": Bksp
+    "&copy_cut": Copy
+    "&kp K_CANCEL": Cancel
+
+    "&sys_reset": Reset
+    "&bootloader": Boot
+    "&bt BT_SEL 0": BT 1
+    "&bt BT_SEL 1": BT 2
+    "&bt BT_SEL 2": BT 3
+    "&bt BT_SEL 3": BT 4
+    "&bt BT_CLR": BT Clr
+
+    "&rgb_ug RGB_TOG": RGB Tog
+    "&rgb_ug RGB_EFF": RGB Eff
+    "&rgb_ug RGB_EFR": RGB Eff-
+    "&rgb_ug RGB_BRI": RGB +
+    "&rgb_ug RGB_BRD": RGB -
+    "&rgb_ug RGB_ON": RGB On
+    "&rgb_ug RGB_OFF": RGB Off
+    "&rgb_ug RGB_SPI": RGB Spd
+
+draw_config:
+  key_h: 60
+  separate_combo_diagrams: false

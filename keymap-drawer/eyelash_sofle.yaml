@@ -1,0 +1,392 @@
+layout: {zmk_keyboard: eyelash_sofle}
+layers:
+  Base:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - UP
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - BSPC
+  - {t: TAB, h: Alt+LGUI}
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - DOWN
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - \
+  - {t: ESC, h: Ctl+Sft+LGUI}
+  - {t: A, h: LGUI}
+  - {t: S, h: LSHFT}
+  - {t: D, h: LALT}
+  - {t: F, h: LCTRL}
+  - {t: G, h: Num}
+  - LEFT
+  - H
+  - {t: J, h: LCTRL}
+  - {t: K, h: LALT}
+  - {t: L, h: RSHFT}
+  - {t: ;, h: LGUI}
+  - ''''
+  - {t: Alt+ENTER, h: Ctl+LGUI}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - RIGHT
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: RET, h: Fn}
+  - MUTE
+  - LCTRL
+  - LGUI
+  - {t: RET, h: Mouse}
+  - {t: RET, h: Fn}
+  - {t: SPACE, h: Nav, s: . ␣}
+  - ENTER
+  - {t: SPACE, h: Nav, s: . ␣}
+  - {t: Alt+`, h: Meh+LGUI}
+  - Smart Num
+  - {t: ⇧ Smart, h: Shift}
+  - {t: 'Alt+,', h: Ctl+LGUI}
+  Nav:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '&mmv MOVE_UP'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - BSPC
+  - {t: TAB, h: Alt+LGUI}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+TAB
+  - ⌘-Tab
+  - '&mkp LCLK'
+  - '&mmv MOVE_DOWN'
+  - {t: DOWN, h: Ctl+END}
+  - {t: RIGHT, h: END}
+  - PG UP
+  - PG DN
+  - {t: ▽, type: trans}
+  - \
+  - {t: ESC, h: Ctl+Sft+LGUI}
+  - {t: LGUI, h: sticky}
+  - {t: LSHFT, h: sticky}
+  - {t: LALT, h: sticky}
+  - {t: LCTRL, h: sticky}
+  - '&mkp RCLK'
+  - '&mmv MOVE_LEFT'
+  - {t: LEFT, h: HOME}
+  - {t: BSPC, h: Ctl+BSPC}
+  - TAB
+  - {t: DEL, h: Ctl+DEL}
+  - RET
+  - ''''
+  - {t: Alt+ENTER, h: Ctl+LGUI}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp MCLK'
+  - '&mmv MOVE_RIGHT'
+  - {t: UP, h: Ctl+HOME}
+  - {t: ▽, type: trans}
+  - INS
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: RET, h: Fn}
+  - MUTE
+  - LCTRL
+  - LGUI
+  - {t: RET, h: Mouse}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - '&mkp LCLK'
+  - {t: SPACE, h: Nav, s: . ␣}
+  - {t: Alt+`, h: Meh+LGUI}
+  - {t: ▽, type: trans}
+  - Cancel
+  - {t: 'Alt+,', h: Ctl+LGUI}
+  Fn:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '&mmv MOVE_UP'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - BSPC
+  - {t: TAB, h: Alt+LGUI}
+  - F12
+  - F7
+  - F8
+  - F9
+  - {t: ▽, type: trans}
+  - '&mmv MOVE_DOWN'
+  - {t: ▽, type: trans}
+  - PREV
+  - VOL UP
+  - NEXT
+  - {t: ▽, type: trans}
+  - \
+  - {t: ESC, h: Ctl+Sft+LGUI}
+  - {t: F11, h: LGUI}
+  - {t: F4, h: LSHFT}
+  - {t: F5, h: LALT}
+  - {t: F6, h: LCTRL}
+  - {t: ▽, type: trans}
+  - '&mmv MOVE_LEFT'
+  - {t: ▽, type: trans}
+  - {t: Gui+Ctl+LEFT, h: LCTRL}
+  - {t: VOL DN, h: RSHFT}
+  - {t: Gui+Ctl+RIGHT, h: LALT}
+  - {t: ▽, type: trans}
+  - ''''
+  - {t: Alt+ENTER, h: Ctl+LGUI}
+  - F10
+  - F1
+  - F2
+  - F3
+  - {t: ▽, type: trans}
+  - '&mmv MOVE_RIGHT'
+  - Gui+Ctl+Sft+A
+  - Gui+Ctl+Sft+Q
+  - Alt+`
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: RET, h: Fn, type: held}
+  - MUTE
+  - LCTRL
+  - LGUI
+  - {t: RET, h: Mouse}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp LCLK'
+  - {t: SPACE, h: Nav, s: . ␣}
+  - {t: Alt+`, h: Meh+LGUI}
+  - MUTE
+  - PP
+  - {t: 'Alt+,', h: Ctl+LGUI}
+  Num:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - UP
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - BSPC
+  - {t: TAB, h: Alt+LGUI}
+  - {t: ▽, type: trans}
+  - '7'
+  - '8'
+  - '9'
+  - {t: ▽, type: trans}
+  - DOWN
+  - '!'
+  - (
+  - )
+  - '{'
+  - '}'
+  - \
+  - {t: ESC, h: Ctl+Sft+LGUI}
+  - {t: '0', h: LGUI}
+  - {t: '4', h: LSHFT}
+  - {t: '5', h: LALT}
+  - {t: '6', h: LCTRL}
+  - {type: held}
+  - LEFT
+  - '*'
+  - '-'
+  - _
+  - '['
+  - ']'
+  - ''''
+  - {t: Alt+ENTER, h: Ctl+LGUI}
+  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - {t: ▽, type: trans}
+  - RIGHT
+  - '#'
+  - '='
+  - +
+  - ^
+  - '&'
+  - {t: RET, h: Fn}
+  - MUTE
+  - LCTRL
+  - LGUI
+  - {t: RET, h: Mouse}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ENTER
+  - {t: SPACE, h: Nav, s: . ␣}
+  - {t: Alt+`, h: Meh+LGUI}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: 'Alt+,', h: Ctl+LGUI}
+  Sys:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - UP
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - BSPC
+  - {t: TAB, h: Alt+LGUI}
+  - BT 1
+  - BT 2
+  - BT 3
+  - BT 4
+  - BT Clr
+  - DOWN
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - \
+  - {t: ESC, h: Ctl+Sft+LGUI}
+  - RGB Eff
+  - RGB Eff-
+  - RGB +
+  - RGB -
+  - {t: Boot, type: held}
+  - LEFT
+  - Boot
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''''
+  - {t: Alt+ENTER, h: Ctl+LGUI}
+  - RGB Off
+  - RGB On
+  - RGB Spd
+  - {t: ▽, type: trans}
+  - Reset
+  - RIGHT
+  - Reset
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: RET, h: Fn, type: held}
+  - MUTE
+  - LCTRL
+  - LGUI
+  - {t: RET, h: Mouse}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ENTER
+  - {t: SPACE, h: Nav, s: . ␣}
+  - {t: Alt+`, h: Meh+LGUI}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: 'Alt+,', h: Ctl+LGUI}
+  Mouse:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - UP
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - BSPC
+  - {t: TAB, h: Alt+LGUI}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - DOWN
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_RIGHT'
+  - PG UP
+  - PG DN
+  - {t: ▽, type: trans}
+  - \
+  - {t: ESC, h: Ctl+Sft+LGUI}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LEFT
+  - '&mmv MOVE_LEFT'
+  - '&mkp LCLK'
+  - '&mkp MCLK'
+  - '&mkp RCLK'
+  - {t: ▽, type: trans}
+  - ''''
+  - {t: Alt+ENTER, h: Ctl+LGUI}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - RIGHT
+  - '&mmv MOVE_UP'
+  - '&msc SCRL_LEFT'
+  - '&msc SCRL_UP'
+  - '&msc SCRL_DOWN'
+  - '&msc SCRL_RIGHT'
+  - {t: RET, h: Fn}
+  - MUTE
+  - LCTRL
+  - LGUI
+  - {t: RET, h: Mouse, type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ENTER
+  - {t: SPACE, h: Nav, s: . ␣}
+  - {t: Alt+`, h: Meh+LGUI}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: 'Alt+,', h: Ctl+LGUI}
