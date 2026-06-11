@@ -4,7 +4,7 @@
 manifest:
   defaults:
     remote: urob
-    revision: v0.1
+    revision: v0.3
 
   remotes:
     - name: zmkfirmware
@@ -13,39 +13,42 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: urob
       url-base: https://github.com/urob
+    - name: m165437
+      url-base: https://github.com/M165437
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
       import: app/west.yml
+      revision: v0.3
 
     - name: eyelash_sofle
       url: https://github.com/a741725193/zmk-sofle
       revision: main
-    - name: mario-peripheral-animation
-      url: https://github.com/GPeye/mario-peripheral-animation
-      revision: main
 
-    - name: zmk-adaptive-key
-      path: modules/zmk/adaptive-key
-    - name: zmk-auto-layer
-      path: modules/zmk/auto-layer
+    # Animated nice_view display (status screen + peripheral animation).
+    # Replaces the unmaintained mario-peripheral-animation. Pin to the release
+    # matching ZMK v0.3. See https://github.com/M165437/nice-view-gem
+    - name: nice-view-gem
+      remote: m165437
+      revision: v0.3.0
+
     - name: zmk-helpers
       path: modules/zmk/helpers
     - name: zmk-tri-state
       path: modules/zmk/tri-state
+    - name: zmk-auto-layer
+      path: modules/zmk/auto-layer
 
+    # Only source necessary Zephyr modules. Remove this entire section to restore
+    # the default (needed for less common hardware).
     - name: zephyr
+      remote: zmkfirmware
       revision: v3.5.0+zmk-fixes
       clone-depth: 1
       import:
-        # Only enable most commonly used boards. For less common hardware one
-        # may need to enable additional modules.
         name-allowlist:
           - cmsis
           - hal_nordic
-          - hal_rpi_pico
-          - hal_stm32
           - lvgl
           - tinycrypt
 
