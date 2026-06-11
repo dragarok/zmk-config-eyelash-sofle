@@ -8,6 +8,7 @@ on:
       - "config/*.dtsi"
       - "config/*.json"
       - "config/key-labels-*.h"
+      - "keymap_drawer.config.yaml"
       - ".github/workflows/draw.yml"
 
 jobs:
